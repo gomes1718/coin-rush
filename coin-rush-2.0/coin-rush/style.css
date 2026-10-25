@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root { color-scheme: dark; --bg:#0a0b12; --panel:#131522; --line:#25283a; --muted:#9296ad; --text:#f7f7ff; --purple:#9270ff; --pink:#e879f9; --gold:#ffd166; }
+* { box-sizing:border-box; }
+body { margin:0; min-height:100vh; background:radial-gradient(ellipse at 50% -20%, #28204b 0, transparent 52%),var(--bg); color:var(--text); font-family:'DM Sans',sans-serif; padding:28px 16px 20px; }
+button { font:inherit; }
+.game { width:min(1040px,100%); margin:0 auto; }
+.topbar,.brand,.section-heading,.stats,.upgrade,.achievement { display:flex; align-items:center; }
+.topbar { justify-content:space-between; margin-bottom:22px; }
+.brand { gap:12px; }
+.brand-icon { display:grid; place-items:center; width:44px; height:44px; border-radius:14px; background:linear-gradient(135deg,var(--purple),var(--pink)); font-size:24px; box-shadow:0 5px 25px #9270ff33; }
+h1,h2,p { margin:0; }
+h1 { font:700 19px 'Space Grotesk',sans-serif; letter-spacing:2px; }
+.brand p { margin-top:3px; font-size:9px; letter-spacing:2px; color:var(--muted); }
+.reset-btn { border:1px solid var(--line); background:#141624; color:#c4c6d6; padding:9px 14px; border-radius:10px; cursor:pointer; }
+.reset-btn:hover { border-color:#77708f; }
+.panel { background:linear-gradient(145deg,#171928f5,#11131ff5); border:1px solid var(--line); border-radius:20px; box-shadow:0 18px 60px #0002; }
+.hero { text-align:center; padding:28px 24px 22px; position:relative; overflow:hidden; }
+.eyebrow { color:#a79aff; font-size:10px; font-weight:700; letter-spacing:2px; }
+.coin-total { display:flex; justify-content:center; align-items:center; gap:12px; margin-top:8px; font:700 clamp(38px,7vw,58px) 'Space Grotesk',sans-serif; letter-spacing:-2px; }
+.coin-total span:first-child { font-size:.7em; filter:drop-shadow(0 0 12px #ffd16666); }
+.subline { color:var(--muted); font-size:12px; margin-top:2px; }
+.coin-button { position:relative; width:142px; height:142px; margin:23px auto 15px; border:0; background:transparent; cursor:pointer; display:flex; align-items:center; justify-content:center; flex-direction:column; color:#5d3900; }
+.big-coin { display:grid; place-items:center; width:106px; height:106px; border-radius:50%; border:7px solid #ffec9a; outline:2px solid #e7a92d; background:radial-gradient(circle at 35% 25%,#fff3a3 0,#ffd65b 32%,#f6a928 72%,#b66b11 100%); box-shadow:inset 0 0 0 5px #ffbf3f,0 8px 0 #9b5b1a,0 12px 28px #ffbd4a30; font:700 60px 'Space Grotesk',sans-serif; transition:transform .09s; z-index:1; }
+.coin-button:hover .big-coin { transform:translateY(-3px) scale(1.03); }
+.coin-button:active .big-coin { transform:translateY(4px) scale(.96); box-shadow:inset 0 0 0 5px #ffbf3f,0 3px 0 #9b5b1a; }
+.click-hint { margin-top:17px; color:#c6bfff; font-size:9px; letter-spacing:1.5px; font-weight:700; white-space:nowrap; }
+.stats { max-width:590px; margin:17px auto 0; padding-top:18px; border-top:1px solid var(--line); justify-content:space-around; gap:10px; }
+.stats div { display:flex; flex-direction:column; gap:7px; }
+.stats div>span { color:var(--muted); font-size:9px; letter-spacing:1px; }
+.stats strong { font:600 16px 'Space Grotesk',sans-serif; }
+.stats strong b { color:var(--gold); }
+.lower-grid { display:grid; grid-template-columns:1.1fr .9fr; gap:18px; margin-top:18px; }
+.shop,.achievements { padding:22px; min-width:0; }
+.section-heading { justify-content:space-between; margin-bottom:19px; }
+h2 { font:600 19px 'Space Grotesk',sans-serif; margin-top:5px; }
+.shop-icon,.trophy { font-size:22px; color:var(--gold); }
+.upgrade { width:100%; gap:12px; text-align:left; padding:13px 12px; margin-top:10px; border:1px solid #292c40; border-radius:13px; background:#191b2b; color:var(--text); cursor:pointer; transition:background .15s,border-color .15s,transform .15s; }
+.upgrade:hover:not(:disabled) { background:#202239; border-color:#7968c4; transform:translateY(-1px); }
+.upgrade:disabled { cursor:not-allowed; opacity:.48; }
+.upgrade-icon { flex:0 0 43px; width:43px; height:43px; display:grid; place-items:center; border-radius:12px; background:#292442; font-size:22px; }
+.upgrade-copy { flex:1; min-width:0; display:flex; flex-direction:column; gap:4px; }
+.upgrade-copy strong { font-size:12px; }
+.upgrade-copy small,.upgrade-copy em { font-size:10px; color:var(--muted); font-style:normal; }
+.upgrade-copy em { color:#a99aff; }
+.upgrade-price { display:flex; flex-direction:column; align-items:flex-end; gap:5px; }
+.upgrade-price strong { color:var(--gold); font:700 14px 'Space Grotesk',sans-serif; }
+.upgrade-price small { font-size:8px; color:#b8b3d7; letter-spacing:.7px; white-space:nowrap; }
+.achievement { gap:11px; padding:14px 0; border-bottom:1px solid #25283a; }
+.achievement-icon { font-size:23px; }
+.achievement div { flex:1; display:flex; flex-direction:column; gap:4px; }
+.achievement strong { font-size:11px; }
+.achievement small { color:var(--muted); font-size:10px; }
+.check { font-size:13px; }
+.achievement.unlocked .check { color:#83e6b1; }
+.achievement.unlocked { background:linear-gradient(90deg,#8c70ff0b,transparent); }
+.save-note { display:flex; align-items:center; gap:8px; margin-top:20px; color:var(--muted); font-size:10px; }
+.save-dot { width:7px; height:7px; background:#63dda2; border-radius:50%; box-shadow:0 0 9px #63dda277; }
+footer { padding:21px 0 0; text-align:center; font-size:10px; color:#777b91; }
+footer span { color:var(--purple); margin-left:4px; }
+.toast { position:fixed; bottom:24px; left:50%; transform:translate(-50%,20px); opacity:0; pointer-events:none; padding:11px 16px; border:1px solid #4e426e; background:#201b36; border-radius:12px; font-size:12px; box-shadow:0 10px 35px #0005; transition:opacity .2s,transform .2s; z-index:10; white-space:nowrap; }
+.toast.show { opacity:1; transform:translate(-50%,0); }
+.float-text { position:absolute; pointer-events:none; color:var(--gold); font:700 18px 'Space Grotesk',sans-serif; animation:float-up .8s ease-out forwards; z-index:3; }
+@keyframes float-up { from { opacity:1; transform:translateY(0) scale(.9); } to { opacity:0; transform:translateY(-55px) scale(1.2); } }
+@media(max-width:720px) { body { padding:18px 12px; } .lower-grid { grid-template-columns:1fr; } .hero { padding:24px 12px 20px; } .shop,.achievements { padding:18px; } .stats strong { font-size:14px; } .stats div>span { font-size:8px; } }
+@media(max-width:380px) { .upgrade { gap:8px; padding:11px 8px; } .upgrade-icon { flex-basis:36px; width:36px; height:36px; } .upgrade-copy strong { font-size:11px; } }
+
+
+/* Atualização 2.0: bônus e missões diárias */
+.bonus-btn { display:flex; align-items:center; justify-content:center; gap:9px; margin:18px auto 0; padding:11px 17px; border:1px solid #6d51a8; border-radius:12px; color:#f8f4ff; background:linear-gradient(100deg,#3b2866,#282344); cursor:pointer; font-size:11px; font-weight:700; letter-spacing:.5px; box-shadow:0 5px 22px #9270ff12; transition:transform .15s,border-color .15s; }
+.bonus-btn:hover:not(:disabled) { transform:translateY(-2px); border-color:#c0a7ff; }
+.bonus-btn span { font-size:17px; color:var(--gold); }
+.bonus-btn small { color:#c9b9ff; font-size:10px; font-weight:500; letter-spacing:0; }
+.bonus-btn:disabled { cursor:default; opacity:.62; }
+.missions-heading { display:flex; align-items:center; justify-content:space-between; margin-top:22px; margin-bottom:5px; }
+.mission-date { color:var(--muted); font-size:9px; }
+.mission { padding:12px 0; border-bottom:1px solid #25283a; }
+.mission-top { display:flex; justify-content:space-between; gap:10px; font-size:11px; }
+.mission-top span { color:#c0a7ff; font-weight:700; }
+.mission small { display:block; margin-top:7px; color:var(--muted); font-size:10px; }
+.progress { height:6px; margin-top:9px; overflow:hidden; border-radius:99px; background:#292b3e; }
+.progress span { display:block; width:0%; height:100%; border-radius:99px; background:linear-gradient(90deg,var(--purple),var(--pink)); transition:width .2s; }
+.mission.completed .progress span { background:linear-gradient(90deg,#5bd69a,#a4f3c5); }
+.mission.completed .mission-top span { color:#80e6b0; }
+@media(max-width:380px) { .bonus-btn { flex-wrap:wrap; } }

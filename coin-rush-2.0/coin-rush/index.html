@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coin Rush — Clique, evolua e conquiste!</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game">
+    <header class="topbar">
+      <div class="brand"><span class="brand-icon">✦</span><div><h1>COIN RUSH</h1><p>CLIQUE • EVOLUA • CONQUISTE</p></div></div>
+      <button id="resetBtn" class="reset-btn" title="Apagar o progresso">Reiniciar</button>
+    </header>
+
+    <section class="hero panel">
+      <div class="eyebrow">SEU TESOURO</div>
+      <div class="coin-total"><span>🪙</span> <span id="coins">0</span></div>
+      <p class="subline">moedas acumuladas</p>
+      <button id="coinBtn" class="coin-button" aria-label="Clique para ganhar moedas">
+        <span class="coin-glow"></span><span class="big-coin">¢</span><span class="click-hint">CLIQUE PARA GANHAR</span>
+      </button>
+      <button id="bonusBtn" class="bonus-btn"><span>⚡</span> BÔNUS RELÂMPAGO <small id="bonusStatus">Disponível!</small></button>
+      <div class="stats">
+        <div><span>POR CLIQUE</span><strong>+<b id="perClick">1</b> 🪙</strong></div>
+        <div><span>POR SEGUNDO</span><strong>+<b id="perSecond">0</b> 🪙</strong></div>
+        <div><span>CLICKS TOTAIS</span><strong id="totalClicks">0</strong></div>
+      </div>
+    </section>
+
+    <section class="lower-grid">
+      <div class="panel shop">
+        <div class="section-heading"><div><span class="eyebrow">INVISTA SEU TESOURO</span><h2>Loja de melhorias</h2></div><span class="shop-icon">↗</span></div>
+        <button class="upgrade" id="clickUpgrade">
+          <span class="upgrade-icon">👆</span><span class="upgrade-copy"><strong>Dedos de aço</strong><small>+1 moeda por clique</small><em>Possuído: <b id="clickLevel">0</b></em></span><span class="upgrade-price"><strong id="clickCost">25</strong><small>🪙 COMPRAR</small></span>
+        </button>
+        <button class="upgrade" id="autoUpgrade">
+          <span class="upgrade-icon">🤖</span><span class="upgrade-copy"><strong>Robô coletor</strong><small>+1 moeda por segundo</small><em>Possuído: <b id="autoLevel">0</b></em></span><span class="upgrade-price"><strong id="autoCost">75</strong><small>🪙 COMPRAR</small></span>
+        </button>
+        <button class="upgrade" id="megaUpgrade">
+          <span class="upgrade-icon">💎</span><span class="upgrade-copy"><strong>Toque de diamante</strong><small>+10 moedas por clique</small><em>Possuído: <b id="megaLevel">0</b></em></span><span class="upgrade-price"><strong id="megaCost">250</strong><small>🪙 COMPRAR</small></span>
+        </button>
+      </div>
+
+      <div class="panel achievements">
+        <div class="section-heading"><div><span class="eyebrow">SEUS MARCOS</span><h2>Conquistas</h2></div><span class="trophy">🏆</span></div>
+        <div class="achievement" id="ach100"><span class="achievement-icon">🥉</span><div><strong>Primeiras economias</strong><small>Acumule 100 moedas</small></div><span class="check">🔒</span></div>
+        <div class="achievement" id="ach1000"><span class="achievement-icon">🥈</span><div><strong>Pequeno magnata</strong><small>Acumule 1.000 moedas</small></div><span class="check">🔒</span></div>
+        <div class="achievement" id="ach10000"><span class="achievement-icon">🥇</span><div><strong>Rei das moedas</strong><small>Acumule 10.000 moedas</small></div><span class="check">🔒</span></div>
+        <div class="missions-heading"><span class="eyebrow">DESAFIOS DE HOJE</span><span class="mission-date" id="missionDate"></span></div>
+        <div class="mission" id="missionClicks"><div class="mission-top"><strong>Cliques rápidos</strong><span id="clickMissionText">0/25</span></div><div class="progress"><span id="clickMissionBar"></span></div><small>Faça 25 cliques e ganhe 50 moedas</small></div>
+        <div class="mission" id="missionEarn"><div class="mission-top"><strong>Junte seu tesouro</strong><span id="earnMissionText">0/200</span></div><div class="progress"><span id="earnMissionBar"></span></div><small>Ganhe 200 moedas e receba 100 extras</small></div>
+        <p class="save-note"><span class="save-dot"></span> Progresso salvo automaticamente neste navegador</p>
+      </div>
+    </section>
+    <footer>Feito por você no VS Code <span>✦</span></footer>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
